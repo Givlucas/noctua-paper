@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.9.14)  2 OCT 2022 14:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.9.14)  5 OCT 2022 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**lit-review.tex
-(./lit-review.tex
+**implementation.tex
+(./implementation.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-04-10>
 (/usr/share/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -337,29 +337,60 @@ File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-)))))
+))) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count283
+\lst@gtempboxa=\box61
+\lst@token=\toks30
+\lst@length=\count284
+\lst@currlwidth=\dimen199
+\lst@column=\count285
+\lst@pos=\count286
+\lst@lostspace=\dimen256
+\lst@width=\dimen257
+\lst@newlines=\count287
+\lst@lineno=\count288
+\lst@maxwidth=\dimen258
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count289
+\lst@skipnumbers=\count290
+\lst@framebox=\box62
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+))
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count283
-\l__pdf_internal_box=\box61
+\l__color_backend_stack_int=\count291
+\l__pdf_internal_box=\box63
 )
-(./lit-review.aux)
-\openout1 = `lit-review.aux'.
+(./implementation.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Warning: Label `lst:example5' multiply defined.
+
+
+LaTeX Warning: Label `lst:example5' multiply defined.
+
+)
+\openout1 = `implementation.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -397,17 +428,17 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count284
-\scratchdimen=\dimen199
-\scratchbox=\box62
-\nofMPsegments=\count285
-\nofMParguments=\count286
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count287
-\MPscratchDim=\dimen256
-\MPnumerator=\count288
-\makeMPintoPDFobject=\count289
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count292
+\scratchdimen=\dimen259
+\scratchbox=\box64
+\nofMPsegments=\count293
+\nofMParguments=\count294
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count295
+\MPscratchDim=\dimen260
+\MPnumerator=\count296
+\makeMPintoPDFobject=\count297
+\everyMPtoPDFconversion=\toks32
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -417,78 +448,86 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-
-LaTeX Warning: Citation `ETH' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `ETH' on page 1 undefined on input line 13.
+\c@lstlisting=\count298
 
 
-LaTeX Warning: Citation `TOR' on page 1 undefined on input line 18.
+LaTeX Warning: Citation `ROOM' on page 1 undefined on input line 11.
 
 
-LaTeX Warning: Citation `TOR' on page 1 undefined on input line 19.
+LaTeX Warning: Citation `CO' on page 1 undefined on input line 38.
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 4
+5.
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 8
+0.
+
+(/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 80.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+
+LaTeX Warning: Citation `KTOR' on page 3 undefined on input line 211.
+
+[3]
+Overfull \hbox (69.9885pt too wide) in paragraph at lines 244--246
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
 
 
-LaTeX Warning: Citation `ETH' on page 1 undefined on input line 23.
+LaTeX Warning: Citation `THALIGIT' on page 4 undefined on input line 295.
 
 
-LaTeX Warning: Citation `ETH' on page 1 undefined on input line 26.
+LaTeX Warning: Citation `THALI' on page 4 undefined on input line 295.
 
 
-LaTeX Warning: Citation `ETH' on page 1 undefined on input line 29.
+LaTeX Warning: Citation `THALIGIT' on page 4 undefined on input line 299.
 
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+Overfull \hbox (3.68704pt too wide) in paragraph at lines 310--311
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
 
-LaTeX Warning: Citation `ETH' on page 1 undefined on input line 31.
-
-
-LaTeX Warning: Citation `TOR' on page 1 undefined on input line 45.
-
-
-LaTeX Warning: Citation `TOR' on page 1 undefined on input line 46.
-
-
-LaTeX Warning: Citation `TOR' on page 1 undefined on input line 50.
-
-
-LaTeX Warning: Citation `DIM' on page 1 undefined on input line 59.
-
-
-LaTeX Warning: Citation `DIM' on page 1 undefined on input line 61.
-
-
-LaTeX Warning: Citation `SENSE' on page 1 undefined on input line 73.
-
-
-LaTeX Warning: Citation `SENSE' on page 1 undefined on input line 75.
-
-
-LaTeX Warning: Citation `SENSE' on page 1 undefined on input line 76.
-
-
-LaTeX Warning: Citation `SENSE' on page 1 undefined on input line 78.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./lit-review.aux)
+[4] [5] (./implementation.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 12412 strings out of 478238
- 256393 string characters out of 5850456
- 537488 words of memory out of 5000000
- 30459 multiletter control sequences out of 15000+600000
- 469567 words of font info for 29 fonts, out of 8000000 for 9000
+ 14502 strings out of 478238
+ 284332 string characters out of 5850456
+ 820068 words of memory out of 5000000
+ 32519 multiletter control sequences out of 15000+600000
+ 471980 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 120i,5n,121p,415b,108s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on lit-review.pdf (1 page, 41011 bytes).
+ 120i,6n,121p,650b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+rm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on implementation.pdf (5 pages, 135252 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

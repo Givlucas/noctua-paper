@@ -1,0 +1,49 @@
+\begin{thebibliography}{10}
+
+\bibitem{THALI}
+
+
+\bibitem{CO}
+Concurrency and coroutines: Kotlin.
+
+\bibitem{ROOM}
+Save data in a local database using room android developers2022, 2022.
+
+\bibitem{KTOR}
+Welcome: Ktor, 2022.
+
+\bibitem{SENSE}
+Muhammad~Salek Ali, Massimo Vecchio, Guntur~D. Putra, Salil~S. Kanhere, and
+  Fabio Antonelli.
+\newblock A decentralized peer-to-peer remote health monitoring system.
+\newblock {\em Sensors}, 20(6), 2020.
+
+\bibitem{TOR}
+Roger Dingledine, Nick Mathewson, and Paul Syverson.
+\newblock Tor: The second-generation onion router.
+\newblock Technical Report ADA465464, NAVAL RESEARCH LAB WASHINGTON DC, 555
+  Overlook Ave SW, Washington, DC 20375, January 2004.
+
+\bibitem{TCP}
+Daniel Maier, Oliver Haase, Jürgen Wäsch, and Marcel Waldvogel.
+\newblock A comparative analysis of nat hole punching.
+\newblock {\em HTWG FORUM - Das Forschungsmagazin der HTWG Konstanz}, pages
+  40--48, 2011.
+
+\bibitem{DIM}
+Sourabh.
+\newblock Inderprastha engineering college.
+\newblock {\em International Research Journal of Engineering and Technology},
+  May 2020.
+\newblock Accessed September 7, 2022.
+
+\bibitem{THALIGIT}
+Thaliproject.
+\newblock Thaliproject/tor\\_onion\_proxy\_library: Provides a jar and an aar for
+  embedding the tor onion proxy into a java or android program, Jun 2014.
+
+\bibitem{ETH}
+Gavin Wood.
+\newblock Ethereum: A secure decentralised generalised transaction ledger.
+
+\end{thebibliography}
