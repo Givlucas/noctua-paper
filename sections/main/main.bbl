@@ -1,16 +1,21 @@
 \begin{thebibliography}{10}
 
-\bibitem{THALI}
-
-
 \bibitem{CO}
 Concurrency and coroutines: Kotlin.
+\newblock
+  \url{https://kotlinlang.org/docs/multiplatform-mobile-concurrency-and-coroutines.html#coroutines}.
+
+\bibitem{THALI}
+Thalia project.
+\newblock \url{http://thaliproject.org/}.
 
 \bibitem{ROOM}
-Save data in a local database using room android developers2022, 2022.
+Save data in a local database using room android developers2022.
+\newblock \url{https://developer.android.com/training/data-storage/room}, 2022.
 
 \bibitem{KTOR}
-Welcome: Ktor, 2022.
+Welcome: Ktor.
+\newblock \url{https://ktor.io/docs/welcome.html}, 2022.
 
 \bibitem{SENSE}
 Muhammad~Salek Ali, Massimo Vecchio, Guntur~D. Putra, Salil~S. Kanhere, and
@@ -24,11 +29,34 @@ Roger Dingledine, Nick Mathewson, and Paul Syverson.
 \newblock Technical Report ADA465464, NAVAL RESEARCH LAB WASHINGTON DC, 555
   Overlook Ave SW, Washington, DC 20375, January 2004.
 
+\bibitem{RINGMASTER}
+Christopher Frascella.
+\newblock Amazon ringmaster of the surveillance circus.
+\newblock {\em Federal Communications Law Journal}, 73(3), May 2021.
+
+\bibitem{NAT}
+Arun Handa.
+\newblock Chapter 3 - basics of ip networks.
+\newblock In Arun Handa, editor, {\em System Engineering For IMS Networks},
+  pages 35--43. Newnes, Burlington, 2009.
+
 \bibitem{TCP}
 Daniel Maier, Oliver Haase, Jürgen Wäsch, and Marcel Waldvogel.
 \newblock A comparative analysis of nat hole punching.
 \newblock {\em HTWG FORUM - Das Forschungsmagazin der HTWG Konstanz}, pages
   40--48, 2011.
+
+\bibitem{DATA}
+Bruce Schneier.
+\newblock {\em Data and Goliath}.
+\newblock Wiley, 2016.
+
+\bibitem{P2P}
+R.~Schollmeier.
+\newblock A definition of peer-to-peer networking for the classification of
+  peer-to-peer architectures and applications.
+\newblock In {\em Proceedings First International Conference on Peer-to-Peer
+  Computing}, pages 101--102, 2001.
 
 \bibitem{DIM}
 Sourabh.
@@ -39,8 +67,10 @@ Sourabh.
 
 \bibitem{THALIGIT}
 Thaliproject.
-\newblock Thaliproject/tor\\_onion\_proxy\_library: Provides a jar and an aar for
-  embedding the tor onion proxy into a java or android program, Jun 2014.
+\newblock Thaliproject/tor\_onion\_proxy\_library: Provides a jar and an aar
+  for embedding the tor onion proxy into a java or android program.
+\newblock \url{https://github.com/thaliproject/Tor\_Onion\_Proxy\_Library}, Jun
+  2014.
 
 \bibitem{ETH}
 Gavin Wood.

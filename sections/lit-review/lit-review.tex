@@ -22,25 +22,26 @@ The coming paragraphs, will go into detail on tor and the specific blockchain th
 
 \textbf{Blockchains} used for distributed computing are described in the Ethereum yellow paper\cite{ETH} as a "simple application on a decentralized, but singleton, compute resource". 
 The Ethereum blockchain takes this idea and uses it to create a generalized block chain that works as one distributed computational resource. 
-Resources are managed via transactions that are signed off on using cryptographic techniques that verify their authenticity []. 
+Resources are managed via transactions that are signed off on using cryptographic techniques that verify their authenticity \cite{ETH} . 
 The method that the Ethereum network uses is known as a Blockchain \cite{ETH}. 
 The Ethereum blockchain is a ledger of information with each entry being tied to an account known as a "wallet". 
 Each time this ledger is updated all computers on the network verify the authenticity of the update with proof of stake algorithms. 
 Computers are motivated to update the ledger via payments of a token called "gas" \cite{ETH} and updates being known as transactions. 
 When a transaction is made the user who initiated it will pay a small fee in gas depending on the size of the transaction and the load the network is under. 
 The nature of the block chains cryptography allows for near absolute certainty of the validity of a transaction \cite{ETH}. 
-Another well-known blockchain is Bitcoin, which differs from Ethereum in that is can only store information relating to how much bitcoin a wallet owns. 
-Ethereum allows for the storage of many different types of information such as code, which the network is able to use to run decentralized apps. 
+Another well-known blockchain is Bitcoin, which differs from Ethereum in that it can only store information relating to how much bitcoin a wallet owns. 
+Opposed to Ethereum which allows for the storage of many different types of information such as code, which the network is able to use to run decentralized apps \cite{ETH}. 
 This ability to store predefined behavior that operate securely on a distributed network is why it is the choice blockchain for this paper. 
 The major downside of Ethereum however is its greatest strength. 
 Due to the open nature of the ledger every computer on the network is able to see all the data in the ledger. 
 Transactions can also be limited based on how much stress the network is currently under as well. 
-To complement Ethereum a second technology discussed below.
+This prevents Ethereum from being used to send messages secretly via the network, however in combination with TOR,
+this can be achieved.
 
 %---------------------
 
 %what is tor?
-\textbf{Tor} is a networking protocol that anonymizes internet traffic. 
+\textbf{Tor} is a networking protocol that can anonymize internet traffic. 
 It works via encrypting data which is then sent through the tor network. 
 The network is made up of many peer to peer connections that bounce your data around preventing any one sever from knowing where your data is going and where it came from \cite{TOR}. 
 Tor is an open-source project that was originally created by the US navy to hide secret communications \cite{TOR}.
@@ -51,8 +52,8 @@ Using Tor nodes as rendezvous servers (Severs that allow clients behind network 
 
 This secure true peer to peer behavior would allow each user on a communication network to be their own message server.
 %Transition
-Combining Tor and the Ethereum network allows for decentralized anonymous network traffic to be directed by a decentralized authority that can verify users securely and anonymously. 
-Several other projects have attempted to create similarly secure apps which will be discussed below
+Combining the Tor and the Ethereum networks allows for decentralized anonymous network traffic to be directed by a decentralized authority that can verify users securely and anonymously, the implementation of which will be explained later on.
+Several other projects have attempted to create similarly secure apps which are discussed below
 
 %DIM
 %What is Dim?
@@ -63,7 +64,8 @@ This allows for network of self-hosted server nodes that store user information.
 Client nodes on the network are able to read user information from the DDB which allows for logins verification from any device. 
 The main benefit of this model is that it is easily used by users who just need to install the app or access the web portal.
 %Diff
-However, This structure lacks several features due to the inherited server node client - node model, it is not truly peer to peer even though it is distributed.  % Needs proof
+However, This structure lacks several features due to the inherited server node client - node model, it is not truly peer to peer even though it is distributed. 
+This is because in a true peer to peer network node in the network act as both servers and clients \cite{P2P} while in the GUNJs network some nodes are dedicated servers. 
 However this model has no single point of failure communication besides access to the web portal or app and uses encryption methods to maintain and ensure transactions on the DDB are legit. 
 Making it secure and easy to use. 
 
@@ -72,7 +74,7 @@ Making it secure and easy to use.
 %What purpose of this project
 Muhammad S. A.\cite{SENSE} proposes a solution not for a chat app but an approach for patients to transfer data from smart sensors to their doctors securely and without a third party. 
 This works is similar in structure to the proposed solution of this paper. 
-\cite{SENSE} focus on two technologies that allow for a secure peer-to-peer architecture 
+\cite{SENSE} focuses on two technologies that allow for a secure peer-to-peer architecture. 
 \cite{SENSE} states that they use the Ethereum block chain for "a medium for negotiation and record keeping" and that tor is used for "Delivering data from patients to doctors".
 This architecture is favorable for the medical setting due to its ability to keep data in the hands solely  of the patient and the doctor. 
 \cite{SENSE} uses the blockchain for identity management and thus is able to securely transfer the data between doctor and patient using tor rendezvous servers.  

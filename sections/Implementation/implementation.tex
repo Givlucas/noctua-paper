@@ -7,11 +7,11 @@
 % Data base
 % - Access is mitigated through a view model
 
-For implementation of the database I chose RoomDB, which is an high level Kotlin library that provides abstraction for creating and managing SQlite databases. 
-RoomDB's can be implemented through several layers: the tables, data access object, repository, and the AppViewModel \cite{ROOM}.
+\textbf{RoomDB} was used for this papers implementation of the database. 
+RoomDB is an high level Kotlin library that provides abstraction for creating and managing SQlite databases. 
+It is implemented through several layers: the tables, data access object, repository, and the AppViewModel \cite{ROOM}.
 The tables are defined using special syntax that correlates to sqlite table qualities like Primary keys and columns. 
 Tables are defined using kotlin data classes using syntax like the following.
-
 
 \begin{lstlisting}[caption={Example of table definition.}, label={lst:example1}, language=Kotlin]
 @Entity(tableName = "contacts_table")
@@ -46,7 +46,7 @@ interface DAO {
     // Adds a contact to the contacts table, takes the contact data class from
     // the Table definition as input and returns nothing.
     // If there is a conflict like a non-unique 
-    // primary key the function will call a fail exception
+    // primary key the function will throw a fail exception
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun addContact(user: Contacts)
     
@@ -106,7 +106,9 @@ interface DAO {
 Accessing these functions can be done from the database repository which holds functions that abstract multiple data sources.
 It acts as an intermediate between the DAO and the database View Model. 
 View models are used for when a database need to be interacted with by UI components. 
-Functions here are define just as normal functions. 
+Functions here are define just as normal functions with the exception of using the suspend key word. 
+The suspend key work tells the JVM that the function will be called inside of a coroutine and that it can be a blocking function. 
+The repository uses functions declared in the dao and returns their values. 
 The syntax for declaring repository functions are as follows. 
 
 \begin{lstlisting}[caption={Example of repository definition.}, label={lst:example3}, language=Kotlin]
@@ -154,8 +156,8 @@ class AppRepository(private val dao: DAO) {
 \end{lstlisting}
 
 The view model uses calls functions from the repository but calls them inside of coroutines that allow for asynchronous access to the database. 
-This is nessacary because the viewmodel is used by UI componets to interacte with the data base so IO calls should be none blocking to prevent slow UI.
-The app view model is defined by the following code.
+This is nessacary because the viewmodel is used by UI componets to interact with the data base so IO calls should be none blocking to prevent a slow UI.
+The app view model used for this implementation is defined by the following code.
 
 \begin{lstlisting}[caption={Example of Viewmodel definition.}, label={lst:example4}, language=Kotlin]
 
@@ -197,9 +199,9 @@ class AppViewModel(application: Application): AndroidViewModel(application) {
 }
 \end{lstlisting}
 
-In conclusion these are the necessary database functions to implement the base functions of the messaging app. 
-If additional feature where to be added it is likely there would need to be additional changes to the implementation. 
-For example the current design is centered around single user conversations, If group conversation where to be implemented. There would need to be queries for gather all users in the shared conversation to a list. 
+These are the necessary database functions to implement the base functionality of the messaging app. 
+If additional features where to be added it is likely there would need to be changes to the implementation. 
+For example the current design is centered around single user conversations. If group conversation where to be implemented, there would need to be queries to gather all users in the shared conversation to a list. 
 In the next section the implementation of the HTTP server and how it interacts with the database will be outlined and expanded upon. 
 
 % HTTP Server
@@ -208,12 +210,12 @@ In the next section the implementation of the HTTP server and how it interacts w
 % - /txt
 % - send()
 
-The http server was implemented using a kotlin library called "Ktor" \cite{KTOR}, which is a light kotlin library for creating http servers and clients. 
+\textbf{The http server} is implemented using a kotlin library called "Ktor" \cite{KTOR}, which is a light kotlin library for creating http servers and clients. 
 Ktor uses coroutines to allow for asynchronous receiving and sending of http requests. 
-For encryption it can use SSL(Secure Sockets Layer) to allow for messages to be sent securely adding an extra layer to the AES256 Encryption that is done when messages are sent. 
+For encryption it can use SSL(Secure Sockets Layer) allowing for messages to be sent securely adding an extra layer to the AES256 Encryption that is done when messages are sent. 
 SSL uses private and public certificates to provide asynchronous encryption between servers and clients. 
-Ktor allows for all standard http messages, but the only used for this implementation will be the Post request. 
-The two methods implemented to handle these requests will be the "/txt" http route and the send() function.
+Ktor allows for all standard http messages, but the only one used for this implementation will be the Post request. 
+The two methods implemented to handle these requests are the "/txt" http route and the send() function.
 Below is the Psuedocode for each function.
 
 \begin{lstlisting}[caption={Psuedocode for /txt.}, label={lst:example5}, language=Kotlin]
@@ -292,13 +294,15 @@ routing{
 \end{lstlisting}
 
 % TOR?
-TOR for this project will implement hidden services using Tor Onion Proxy Library a java library \cite{THALIGIT} developed under Microsoft open source as part of the Thali project \cite{THALI}. 
-The Thaili project is a group working towards advancing technologies involved in blue tooth and wifi direct networking.
-The goal of the Tor Onion Proxy Library is to ease the management of TOR proxies and allow each app to act as its own tor proxy. 
-This allows for TOR to be backed into an app instead of relying on third parties like Orbot to create a hidden service. 
-The code for createing the TOR hidden service is relatively simple as little logic is needed to create the service. The code below is sampled from the github for the Tor Onion Proxy Library \cite{THALIGIT}.
+\textbf{TOR}, for this project, implement of the hidden service was done using Tor Onion Proxy Library a java library \cite{THALIGIT} developed under Microsoft open source as part of the Thali project \cite{THALI}. 
+The Thali project is a group working towards advancing technologies involved in bluetooth and wifi direct networking.
+The goal of the Tor Onion Proxy Library is to ease the management of TOR proxies and allow each app to act as its own TOR proxy. 
+This allows for TOR to be baked into an app instead of relying on third parties like Orbot to create a hidden service. 
+Relatively little logic is necessary for creating the hidden service as most of the operations are handled by the library. 
+The TOR proxy listens to the port that the HTTP server runs on and broadcasts it on the rendezvous server on another port.
+The code below is sampled from the github for the Tor Onion Proxy Library \cite{THALIGIT}.
 
-\begin{lstlisting}[caption={Psuedocode for send().}, label={lst:example5}, language=Java]
+\begin{lstlisting}[caption={Psuedocode for hidden service.}, label={lst:example5}, language=Java]
 
 String fileStorageLocation = "torfiles";
 OnionProxyManager onionProxyManager =
@@ -323,6 +327,73 @@ Socket clientSocket =
 
 \end{lstlisting}
 
-% EAS?
+% ENS?
+
+Implementation of the \textbf{ENS} is done using Solidity which is a langauge that supports compilation into byte-code that can run on the Ethereum Virtual Machine(EVM) \cite{ETH}. 
+The EVM is similar to the Java Virtual Machine in idea, as it allows for many machines with different architecture to run the same code. 
+When publishing a smart contract to the Ethereum network, it is first compiled into bytecode and is then uploaded and given an address space in the Ethereum ledger \cite{ETH}. 
+Using this address and web3j, a java library that allows users to link their Ethereum wallet to android apps, the application can call the functions of the smart contract. 
+This will allow users to manipulate their data on the ethereum block chain and provide a way for users to query for other users addresses. 
+To facilitate these interactions the smart contract consists of a struct, a dictionary object with String keys and values of instances of the struct, and four functions. 
+Below is the pseudocode for creating the smart contract as well as comments explaining more on the fucntions. 
+
+\begin{lstlisting}[caption={Psuedocode for ENS.}, label={lst:example6}]
+
+struct User {
+	String username;
+	String address;
+	String owner; // Wallet address of the owner of the username
+}
+
+// Creates a dictionary object that contains keys
+// of the string type that will be 
+// equal to the username of the user
+// and values that will be equal
+// to instances of the User struct
+mapping(String => User) public ENS;
+
+// Function to add a user to the ENS map
+// First check if user exists if not
+// add user
+function addUser(username: String, address: String){
+	if( EAS[username].exists ){
+		return "Transaction failed username exists"
+	} 
+	else {
+		user = User(username, address, msg.sender)
+	{
+}
+
+// Attempts to update the address of a user.
+// Will not update unless username exists
+// and username is owned by sender
+function updateAddress(username: String, newAddress: String){
+	if( !EAS[username].exists or msg.sender != EAS[username].owner){
+		return "Transaction failed because username \
+		doesn't exist or msg.sender is not owner"
+	} 
+	else {
+		EAS[username].address = newAddress
+	}
+}
+
+// Looks up a user in the ENS and
+// returns address of user
+function lookupUser( username: String ){
+	return EAS[username].address
+}
+
+// Deletes a user from the mapping
+deleteUser(username: String){
+	if( EAS[username].exists and msg.sender == EAS[username].owner){
+		delete EAS[username]
+	}
+}
+
+\end{lstlisting}
+
+In conclusion the implementation of the core components of this system are outlined above. The database stores the data captured from the primary user and from incoming messages. 
+While the HTTP server handles the incoming HTTP messages from other users and attempts to add them to a conversation if they are valid messages. 
+The TOR hidden service allows the HTTP server to be accessed by users outside of the local network, and the ENS provides the application with a decentralized way for users to find each other. 
 
 \end{document}

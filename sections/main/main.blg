@@ -3,53 +3,51 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: ../citations/citations.bib
-Warning--entry type for "THALIGIT" isn't style-file defined
---line 73 of file ../citations/citations.bib
 Warning--to sort, need author or key in ROOM
 Warning--to sort, need author or key in CO
 Warning--to sort, need author or key in KTOR
 Warning--to sort, need author or key in THALI
 Warning--empty journal in ETH
 Warning--empty year in ETH
-You've used 10 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            556 strings with 5165 characters,
-and the built_in function-call counts, 2293 in all, are:
-= -- 205
-> -- 94
-< -- 2
-+ -- 42
-- -- 30
-* -- 133
-:= -- 362
-add.period$ -- 21
-call.type$ -- 10
-change.case$ -- 44
+            591 strings with 5966 characters,
+and the built_in function-call counts, 3606 in all, are:
+= -- 347
+> -- 126
+< -- 4
++ -- 56
+- -- 39
+* -- 196
+:= -- 575
+add.period$ -- 39
+call.type$ -- 14
+change.case$ -- 60
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 92
-empty$ -- 211
-format.name$ -- 30
-if$ -- 486
+cite$ -- 20
+duplicate$ -- 159
+empty$ -- 331
+format.name$ -- 39
+if$ -- 791
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 4
-newline$ -- 44
-num.names$ -- 12
-pop$ -- 71
+int.to.str$ -- 14
+missing$ -- 9
+newline$ -- 69
+num.names$ -- 22
+pop$ -- 91
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 47
 quote$ -- 0
-skip$ -- 87
+skip$ -- 127
 stack$ -- 0
-substring$ -- 76
-swap$ -- 16
-text.length$ -- 2
+substring$ -- 145
+swap$ -- 37
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 40
+type$ -- 54
 warning$ -- 6
-while$ -- 15
-width$ -- 12
-write$ -- 84
-(There were 7 warnings)
+while$ -- 28
+width$ -- 16
+write$ -- 140
+(There were 6 warnings)
