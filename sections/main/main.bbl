@@ -5,10 +5,6 @@ Concurrency and coroutines: Kotlin.
 \newblock
   \url{https://kotlinlang.org/docs/multiplatform-mobile-concurrency-and-coroutines.html#coroutines}.
 
-\bibitem{THALI}
-Thalia project.
-\newblock \url{http://thaliproject.org/}.
-
 \bibitem{ROOM}
 Save data in a local database using room android developers2022.
 \newblock \url{https://developer.android.com/training/data-storage/room}, 2022.
@@ -34,6 +30,11 @@ Christopher Frascella.
 \newblock Amazon ringmaster of the surveillance circus.
 \newblock {\em Federal Communications Law Journal}, 73(3), May 2021.
 
+\bibitem{PAPERGIT}
+Lucas Givens.
+\newblock nocuta-messenger.
+\newblock \url{https://github.com/Givlucas/noctua-messenger}, Sep 2022.
+
 \bibitem{NAT}
 Arun Handa.
 \newblock Chapter 3 - basics of ip networks.
@@ -45,6 +46,11 @@ Daniel Maier, Oliver Haase, Jürgen Wäsch, and Marcel Waldvogel.
 \newblock A comparative analysis of nat hole punching.
 \newblock {\em HTWG FORUM - Das Forschungsmagazin der HTWG Konstanz}, pages
   40--48, 2011.
+
+\bibitem{KMPTOR}
+Matthew Nelson.
+\newblock kmp-tor.
+\newblock \url{https://github.com/05nelsonm/kmp-tor}, Feb 2022.
 
 \bibitem{DATA}
 Bruce Schneier.

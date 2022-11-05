@@ -294,35 +294,40 @@ routing{
 \end{lstlisting}
 
 % TOR?
-\textbf{TOR}, for this project, implement of the hidden service was done using Tor Onion Proxy Library a java library \cite{THALIGIT} developed under Microsoft open source as part of the Thali project \cite{THALI}. 
-The Thali project is a group working towards advancing technologies involved in bluetooth and wifi direct networking.
-The goal of the Tor Onion Proxy Library is to ease the management of TOR proxies and allow each app to act as its own TOR proxy. 
+\textbf{TOR}, for this project, implement of the hidden service was done using kpm-tor \cite{KMPTOR} which a branch of the Tor Onion Proxy Library \cite{THALIGIT}.
+The goal of the kmp-tor is to ease the management of TOR proxies and allow each app to act as its own TOR proxy. 
 This allows for TOR to be baked into an app instead of relying on third parties like Orbot to create a hidden service. 
-Relatively little logic is necessary for creating the hidden service as most of the operations are handled by the library. 
 The TOR proxy listens to the port that the HTTP server runs on and broadcasts it on the rendezvous server on another port.
-The code below is sampled from the github for the Tor Onion Proxy Library \cite{THALIGIT}.
+First, the configuration of the tor server must be done by setting all the ports that it will forward. 
+Then the hidden service is configured and its ports are directed to the ports of the http server, so the messages cant be forwarded. Below is an example of the configuration of the hidden service. The rest of the code can be found at the github for this papers project in the /tor package \cite{PAPERGIT}.
+
 
 \begin{lstlisting}[caption={Psuedocode for hidden service.}, label={lst:example5}, language=Java]
 
-String fileStorageLocation = "torfiles";
-OnionProxyManager onionProxyManager =
-        new AndroidOnionProxyManager(this.getApplicationContext(), fileStorageLocation);
-int totalSecondsPerTorStartup = 4 * 60;
-int totalTriesPerTorStartup = 5;
+put(HiddenService()
+                        .setPorts(ports = setOf(
+                            // Use a unix domain socket to communicate via IPC instead of over TCP
+                            HiddenService.UnixSocket(virtualPort = Port(80), targetUnixSocket = hsPath.builder {
+                                addSegment(HiddenService.UnixSocket.DEFAULT_UNIX_SOCKET_NAME)
+                            }),
+                        ))
+                        .setMaxStreams(maxStreams = HiddenService.MaxStreams(value = 2))
+                        .setMaxStreamsCloseCircuit(value = TorF.True)
+                        .set(FileSystemDir(path = hsPath))
+                    )
 
-// Start the Tor Onion Proxy
-if (onionProxyManager.startWithRepeat(totalSecondsPerTorStartup, totalTriesPerTorStartup, true) == false) {
-    Log.e("TorTest", "Couldn't start Tor!");
-    return;
-}
-
-// Start a hidden service listener
-int hiddenServicePort = 80;
-int localPort = 9343;
-String onionAddress = onionProxyManager.publishHiddenService(hiddenServicePort, localPort);
-
-Socket clientSocket =
-        Utilities.socks4aSocketConnection(onionAddress, hiddenServicePort, "127.0.0.1", localPort);
+                    put(HiddenService()
+                        .setPorts(ports = setOf(
+                            HiddenService.Ports(virtualPort = Port(80), targetPort = Port(5001))
+                        ))
+                        .set(FileSystemDir(path =
+                            workDir.builder {
+                                addSegment(HiddenService.DEFAULT_PARENT_DIR_NAME)
+                                addSegment("test_service_2")
+                            }
+                        ))
+                    )
+                }.build()
 
 
 \end{lstlisting}

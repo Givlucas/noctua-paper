@@ -6,48 +6,47 @@ Database file #1: ../citations/citations.bib
 Warning--to sort, need author or key in ROOM
 Warning--to sort, need author or key in CO
 Warning--to sort, need author or key in KTOR
-Warning--to sort, need author or key in THALI
 Warning--empty journal in ETH
 Warning--empty year in ETH
-You've used 14 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            591 strings with 5966 characters,
-and the built_in function-call counts, 3606 in all, are:
-= -- 347
-> -- 126
+            597 strings with 6073 characters,
+and the built_in function-call counts, 3867 in all, are:
+= -- 372
+> -- 139
 < -- 4
-+ -- 56
-- -- 39
-* -- 196
-:= -- 575
-add.period$ -- 39
-call.type$ -- 14
-change.case$ -- 60
++ -- 61
+- -- 43
+* -- 207
+:= -- 628
+add.period$ -- 43
+call.type$ -- 15
+change.case$ -- 65
 chr.to.int$ -- 0
 cite$ -- 20
-duplicate$ -- 159
-empty$ -- 331
-format.name$ -- 39
-if$ -- 791
+duplicate$ -- 166
+empty$ -- 352
+format.name$ -- 43
+if$ -- 843
 int.to.chr$ -- 0
-int.to.str$ -- 14
+int.to.str$ -- 15
 missing$ -- 9
-newline$ -- 69
-num.names$ -- 22
-pop$ -- 91
+newline$ -- 75
+num.names$ -- 26
+pop$ -- 99
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 51
 quote$ -- 0
-skip$ -- 127
+skip$ -- 133
 stack$ -- 0
-substring$ -- 145
-swap$ -- 37
+substring$ -- 150
+swap$ -- 38
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
-warning$ -- 6
-while$ -- 28
-width$ -- 16
-write$ -- 140
-(There were 6 warnings)
+type$ -- 58
+warning$ -- 5
+while$ -- 32
+width$ -- 17
+write$ -- 153
+(There were 5 warnings)
